@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 
 
-class CarList : Fragment() {
+class LoginFragment : Fragment() {
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
@@ -19,7 +19,7 @@ class CarList : Fragment() {
 		savedInstanceState: Bundle?
 	): View? {
 		// Inflate the layout for this fragment
-		return inflater.inflate(R.layout.fragment_car_list, container, false)
+		return inflater.inflate(R.layout.fragment_login, container, false)
 	}
 
 
