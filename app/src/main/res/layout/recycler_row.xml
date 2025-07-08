@@ -1,0 +1,73 @@
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="12dp"
+    app:cardElevation="5dp"
+    android:elevation="@dimen/cardview_default_radius"
+    app:cardCornerRadius="12dp"
+    android:background="@drawable/card_border"
+    app:cardBackgroundColor="@android:color/transparent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Araba küçük resmi -->
+        <ImageView
+            android:id="@+id/image_car"
+            android:layout_width="120dp"
+            android:layout_height="80dp"
+            android:scaleType="centerCrop"
+            android:contentDescription="Araba resmi"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="@drawable/rounded_corners" />
+
+        <!-- Marka ve model -->
+        <TextView
+            android:id="@+id/text_brand_model"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Toyota Corolla"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:maxLines="1"
+            android:ellipsize="end"
+            app:layout_constraintStart_toEndOf="@id/image_car"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/image_car"
+            android:layout_marginStart="16dp" />
+
+        <!-- Fiyat -->
+        <TextView
+            android:id="@+id/text_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="₺150,000"
+            android:textSize="16sp"
+            android:textColor="#388E3C"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/text_brand_model"
+            app:layout_constraintTop_toBottomOf="@id/text_brand_model"
+            android:layout_marginTop="8dp" />
+
+        <!-- Kilometre -->
+        <TextView
+            android:id="@+id/text_km"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="120,000 km"
+            android:textSize="14sp"
+            android:textColor="#9C9C9C"
+            app:layout_constraintStart_toEndOf="@id/text_price"
+            app:layout_constraintTop_toTopOf="@id/text_price"
+            android:layout_marginStart="16dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

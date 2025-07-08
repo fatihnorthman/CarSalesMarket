@@ -3,12 +3,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Profile">
+    tools:context=".ProfileFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <FrameLayout
+        android:id="@+id/frameLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:background="#121212"
+        tools:layout_editor_absoluteX="24dp"
+        tools:layout_editor_absoluteY="24dp">
+
+        <!-- Sol üst köşe üçgen -->
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="100dp"
+            android:layout_gravity="start|top"
+            android:scaleType="fitXY"
+            android:src="@drawable/background_login" />
+        <!-- Alt sağ köşe sarı üçgen (180 derece döndürülmüş) -->
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="100dp"
+            android:layout_gravity="end|bottom"
+            android:rotation="180"
+            android:scaleType="fitXY"
+            android:src="@drawable/background_login" />
+    </FrameLayout>
 
 </FrameLayout>

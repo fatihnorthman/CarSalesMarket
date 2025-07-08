@@ -5,8 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.ncorp.carsalesmarket.databinding.FragmentAddCarBinding
 
 class AddCarFragment : Fragment() {
+	private var _binding: FragmentAddCarBinding? = null
+	private val binding get() = _binding!!
 
 
 	override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,7 +22,20 @@ class AddCarFragment : Fragment() {
 		savedInstanceState: Bundle?
 	): View? {
 		// Inflate the layout for this fragment
-		return inflater.inflate(R.layout.fragment_add_car, container, false)
+		_binding = FragmentAddCarBinding.inflate(inflater, container, false)
+		val view = binding.root
+		return view	}
+
+	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+		super.onViewCreated(view, savedInstanceState)
+	}
+
+
+
+
+	override fun onDestroyView() {
+		super.onDestroyView()
+		_binding = null
 	}
 
 
