@@ -2,7 +2,10 @@ package com.ncorp.carsalesmarket.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import com.bumptech.glide.Glide
+
 import androidx.recyclerview.widget.RecyclerView
+import com.ncorp.carsalesmarket.R
 import com.ncorp.carsalesmarket.databinding.RecyclerRowBinding
 import com.ncorp.carsalesmarket.model.Cars
 
@@ -20,7 +23,28 @@ class Adapter(private val carsList: List<Cars>) : RecyclerView.Adapter<Adapter.V
 		holder: ViewHolder,
 		position: Int
 	) {
-		holder.bind(carsList[position])
+		val car = carsList[position]
+		with(holder.binding) {
+			// Marka ve model
+			textBrandModel.text = "${car.brand} ${car.model}"
+
+			// Fiyat
+			textPrice.text = "₺%,.0f".format(car.price)
+
+			// Kilometre (örnek: 120,000 km)
+			textKm.text = "%,d km".format(car.mileage)
+
+			// Resim yükleme (örneğin Glide kullanıyorsan)
+			if (car.imageUri != null) {
+				Glide.with(imageCar.context)
+					.load(car.imageUri)
+					.centerCrop()
+					.into(imageCar)
+			} else {
+				// Resim yoksa varsayılan veya boş bırak
+				imageCar.setImageResource(R.drawable.placeholder_image)
+			}
+		}
 	}
 
 	override fun getItemCount(): Int {
@@ -28,28 +52,6 @@ class Adapter(private val carsList: List<Cars>) : RecyclerView.Adapter<Adapter.V
 	}
 
 	class ViewHolder(var binding: RecyclerRowBinding) : RecyclerView.ViewHolder(binding.root) {
-		fun bind(car: Cars) {
-			TODO("XMLDEKİ IDLER DÜZELTİLECEK")
-			binding.textViewModel.text = car.model
-			binding.textViewYear.text = car.year.toString()
-			binding.textViewMileage.text = "${car.mileage} km"
-			binding.textViewPrice.text = "${car.price} ₺"
-			binding.textViewCity.text = car.city
-			binding.textViewPhone.text = car.phoneNumber
-			binding.textViewFuelType.text = car.fuelType.name.replaceFirstChar { it.uppercase() }
-			binding.textViewTransmission.text = car.transmission.name.replaceFirstChar { it.uppercase() }
-			binding.textViewCondition.text = car.condition.name.replaceFirstChar { it.uppercase() }
-			binding.textViewExtraNotes.text = car.extraNotes ?: ""
 
-			// Resim varsa Glide ile yükle, yoksa placeholder göster
-			if (!car.imageUri.isNullOrEmpty()) {
-				Glide.with(binding.imageViewCar.context)
-					.load(car.imageUri)
-					.placeholder(R.drawable.placeholder_car)
-					.into(binding.imageViewCar)
-			} else {
-				binding.imageViewCar.setImageResource(R.drawable.placeholder_car)
-			}
-		}
 	}
 }

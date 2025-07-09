@@ -40,6 +40,9 @@ android {
 }
 
 dependencies {
+	implementation ("com.github.bumptech.glide:glide:4.15.1")
+	ksp ("com.github.bumptech.glide:ksp:4.15.1")
+
 	implementation("com.google.android.material:material:1.12.0")
 	implementation(libs.androidx.core.ktx)
 	implementation(libs.androidx.appcompat)

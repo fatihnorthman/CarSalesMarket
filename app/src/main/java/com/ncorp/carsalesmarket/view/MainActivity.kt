@@ -24,18 +24,47 @@ class MainActivity : AppCompatActivity() {
 
 		// NavigationRail item seçimine listener ekle
 		binding.navigationRail.setOnItemSelectedListener { menuItem ->
+			// Seçilen item'ın view'ını alıyoruz (null kontrolüyle)
+			val itemView = binding.navigationRail.findViewById<View>(menuItem.itemId)
+			if (itemView != null) {
+				itemView.animate()
+					.scaleX(1.2f)
+					.scaleY(1.2f)
+					.setDuration(150)
+					.withEndAction {
+						itemView.animate()
+							.scaleX(1f)
+							.scaleY(1f)
+							.setDuration(150)
+							.start()
+					}
+					.start()
+			}
+
 			when (menuItem.itemId) {
 				R.id.navigation_profile -> {
 					navController.navigate(R.id.profileFragment)
 					true
 				}
 				R.id.navigation_search -> {
-					// Örneğin search fragment yoksa TODO bırakabiliriz
+					// Örneğin SearchFragment varsa şunu kullan:
 					// navController.navigate(R.id.searchFragment)
 					true
 				}
 				R.id.navigation_add -> {
 					navController.navigate(R.id.addCarFragment)
+					true
+				}
+				R.id.navigation_favorites -> {
+
+					true
+				}
+				R.id.navigation_notifications -> {
+
+					true
+				}
+				R.id.navigation_settings -> {
+
 					true
 				}
 				else -> false
