@@ -53,20 +53,45 @@
     </string-array>
 
     <!-- Renkler -->
+    <!-- Renkler (Genişletilmiş) -->
     <string-array name="colors_array">
         <item>Siyah</item>
+        <item>Metalik Siyah</item>
+        <item>Mat Siyah</item>
         <item>Beyaz</item>
+        <item>İnci Beyazı</item>
+        <item>Krem</item>
         <item>Kırmızı</item>
+        <item>Bordo</item>
+        <item>Şarap Kırmızısı</item>
         <item>Mavi</item>
+        <item>Lacivert</item>
+        <item>Açık Mavi</item>
         <item>Gri</item>
+        <item>Metalik Gri</item>
+        <item>Antrasit</item>
         <item>Gümüş</item>
+        <item>Platin Gri</item>
         <item>Yeşil</item>
+        <item>Koyu Yeşil</item>
+        <item>Zeytin Yeşili</item>
         <item>Sarı</item>
+        <item>Limon Sarısı</item>
         <item>Turuncu</item>
+        <item>Yanık Turuncu</item>
         <item>Bej</item>
+        <item>Şampanya</item>
         <item>Mor</item>
+        <item>Lila</item>
         <item>Kahverengi</item>
+        <item>Koyu Kahverengi</item>
+        <item>Altın</item>
+        <item>Bakır</item>
+        <item>Bronz</item>
+        <item>Cam Göbeği</item>
+        <item>Füme</item>
     </string-array>
+
 
     <!-- Kasa Tipleri -->
     <string-array name="body_types_array">
