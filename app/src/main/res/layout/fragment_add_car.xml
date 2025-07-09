@@ -9,11 +9,10 @@
     android:fillViewport="true"
     tools:context=".view.AddCarFragment">
 
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/addCarLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="#121212"
         android:padding="24dp">
 
@@ -31,7 +30,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-
             <ImageView
                 android:id="@+id/imageCar"
                 android:layout_width="match_parent"
@@ -40,11 +38,9 @@
                 android:contentDescription="Araç Resmi"
                 android:scaleType="centerCrop"
                 android:src="@drawable/placeholder_image" />
-
-
         </com.google.android.material.card.MaterialCardView>
 
-
+        <!-- Marka -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/brandLayout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -68,7 +64,7 @@
                 android:textColor="#FFFFFF" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Model (Yazılı) -->
+        <!-- Model -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/modelLayout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -92,7 +88,7 @@
                 android:textColor="#FFFFFF" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Yıl (Seçimli dropdown) -->
+        <!-- Yıl (dropdown) -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/yearLayout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -111,11 +107,17 @@
                 android:id="@+id/autoCompleteYear"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
                 android:inputType="none"
+                android:drawableEnd="@drawable/ic_dropdown_arrow"
+                android:dropDownVerticalOffset="8dp"
+                android:popupBackground="#292929"
                 android:textColor="#FFFFFF" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Yakıt Türü (Seçimli dropdown) -->
+        <!-- Yakıt Türü (dropdown) -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/fuelTypeLayout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -134,11 +136,18 @@
                 android:id="@+id/autoCompleteFuelType"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:importantForAccessibility="yes"
                 android:inputType="none"
+                android:drawableEnd="@drawable/ic_dropdown_arrow"
+                android:dropDownVerticalOffset="8dp"
+                android:popupBackground="#292929"
                 android:textColor="#FFFFFF" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Vites Tipi (Seçimli dropdown) -->
+        <!-- Vites Tipi (dropdown) -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/gearboxLayout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -157,11 +166,17 @@
                 android:id="@+id/autoCompleteGearbox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
                 android:inputType="none"
+                android:drawableEnd="@drawable/ic_dropdown_arrow"
+                android:dropDownVerticalOffset="8dp"
+                android:popupBackground="#292929"
                 android:textColor="#FFFFFF" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Motor Hacmi (Yazılı) -->
+        <!-- Motor Hacmi -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/engineCapacityLayout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -185,7 +200,7 @@
                 android:textColor="#FFFFFF" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Motor Gücü (Yazılı) -->
+        <!-- Motor Gücü -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/enginePowerLayout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -209,7 +224,7 @@
                 android:textColor="#FFFFFF" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Renk (Seçimli dropdown) -->
+        <!-- Renk (dropdown) -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/colorLayout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -228,11 +243,17 @@
                 android:id="@+id/autoCompleteColor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
                 android:inputType="none"
+                android:drawableEnd="@drawable/ic_dropdown_arrow"
+                android:dropDownVerticalOffset="8dp"
+                android:popupBackground="#292929"
                 android:textColor="#FFFFFF" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Kasa Tipi (Seçimli dropdown) -->
+        <!-- Kasa Tipi (dropdown) -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/bodyTypeLayout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -251,11 +272,17 @@
                 android:id="@+id/autoCompleteBodyType"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
                 android:inputType="none"
+                android:drawableEnd="@drawable/ic_dropdown_arrow"
+                android:dropDownVerticalOffset="8dp"
+                android:popupBackground="#292929"
                 android:textColor="#FFFFFF" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Araç Durumu (Seçimli dropdown) -->
+        <!-- Araç Durumu (dropdown) -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/conditionLayout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -274,11 +301,17 @@
                 android:id="@+id/autoCompleteCondition"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
                 android:inputType="none"
+                android:drawableEnd="@drawable/ic_dropdown_arrow"
+                android:dropDownVerticalOffset="8dp"
+                android:popupBackground="#292929"
                 android:textColor="#FFFFFF" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Kaza Durumu (Seçimli dropdown) -->
+        <!-- Kaza Durumu (dropdown) -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/accidentLayout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -297,11 +330,17 @@
                 android:id="@+id/autoCompleteAccident"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
                 android:inputType="none"
+                android:drawableEnd="@drawable/ic_dropdown_arrow"
+                android:dropDownVerticalOffset="8dp"
+                android:popupBackground="#292929"
                 android:textColor="#FFFFFF" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Kilometre (Yazılı) -->
+        <!-- Kilometre -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/kmLayout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -325,7 +364,7 @@
                 android:textColor="#FFFFFF" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Fiyat (Yazılı) -->
+        <!-- Fiyat -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/priceLayout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -349,7 +388,7 @@
                 android:textColor="#FFFFFF" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Satılan Şehir (Yazılı) -->
+        <!-- Satılan Şehir -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/cityLayout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -373,7 +412,7 @@
                 android:textColor="#FFFFFF" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Telefon Numarası (Yazılı) -->
+        <!-- Telefon Numarası -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/phoneLayout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -398,7 +437,31 @@
                 android:textColor="#FFFFFF" />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <!-- Ek Açıklama -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/extraNotesLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="36dp"
+            android:hint="Ek Açıklama"
+            app:boxBackgroundColor="#1E1E1E"
+            app:boxStrokeColor="#FFD700"
+            app:hintTextColor="#FFD700"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/phoneLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editExtraNotes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapSentences|textMultiLine"
+                android:minLines="3"
+                android:maxLines="6"
+                android:textColor="#FFFFFF" />
+        </com.google.android.material.textfield.TextInputLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 </ScrollView>

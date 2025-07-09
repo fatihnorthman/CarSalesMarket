@@ -1,5 +1,100 @@
 <resources>
     <string name="app_name">CarSalesMarket</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Yıllar (2025'ten 2000'e kadar örnek) -->
+    <string-array name="years_array">
+        <item>2025</item>
+        <item>2024</item>
+        <item>2023</item>
+        <item>2022</item>
+        <item>2021</item>
+        <item>2020</item>
+        <item>2019</item>
+        <item>2018</item>
+        <item>2017</item>
+        <item>2016</item>
+        <item>2015</item>
+        <item>2014</item>
+        <item>2013</item>
+        <item>2012</item>
+        <item>2011</item>
+        <item>2010</item>
+        <item>2009</item>
+        <item>2008</item>
+        <item>2007</item>
+        <item>2006</item>
+        <item>2005</item>
+        <item>2004</item>
+        <item>2003</item>
+        <item>2002</item>
+        <item>2001</item>
+        <item>2000</item>
+    </string-array>
+
+    <!-- Yakıt Türleri -->
+    <string-array name="fuel_types_array">
+        <item>Benzin</item>
+        <item>Dizel</item>
+        <item>Elektrik</item>
+        <item>Hibrit</item>
+        <item>LPG</item>
+        <item>Doğalgaz (CNG)</item>
+        <item>Elektrikli Hibrit</item>
+    </string-array>
+
+    <!-- Vites Tipleri -->
+    <string-array name="gearbox_array">
+        <item>Otomatik</item>
+        <item>Manuel</item>
+        <item>Yarı Otomatik</item>
+        <item>CVT</item>
+        <item>DSG</item>
+    </string-array>
+
+    <!-- Renkler -->
+    <string-array name="colors_array">
+        <item>Siyah</item>
+        <item>Beyaz</item>
+        <item>Kırmızı</item>
+        <item>Mavi</item>
+        <item>Gri</item>
+        <item>Gümüş</item>
+        <item>Yeşil</item>
+        <item>Sarı</item>
+        <item>Turuncu</item>
+        <item>Bej</item>
+        <item>Mor</item>
+        <item>Kahverengi</item>
+    </string-array>
+
+    <!-- Kasa Tipleri -->
+    <string-array name="body_types_array">
+        <item>Sedan</item>
+        <item>Hatchback</item>
+        <item>SUV</item>
+        <item>Station Wagon</item>
+        <item>Coupe</item>
+        <item>Convertible</item>
+        <item>Pickup</item>
+        <item>Minivan</item>
+        <item>Roadster</item>
+        <item>Van</item>
+    </string-array>
+
+    <!-- Araç Durumları -->
+    <string-array name="condition_array">
+        <item>Sıfır</item>
+        <item>2. El</item>
+        <item>Yeni</item>
+        <item>Kullanılmış</item>
+    </string-array>
+
+    <!-- Kaza Durumu -->
+    <string-array name="accident_array">
+        <item>Kaza Yok</item>
+        <item>Kazalı</item>
+        <item>Hasar Kaydı Var</item>
+        <item>Bakımlı</item>
+    </string-array>
 </resources>
