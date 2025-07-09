@@ -2,9 +2,17 @@
 <resources><style name="BottomNavActive" parent="TextAppearance.AppCompat.Caption">
     <item name="android:textSize">12sp</item>
     <item name="android:textColor">@color/white</item>
+
 </style>
 
     <style name="BottomNavInactive" parent="TextAppearance.AppCompat.Caption">
         <item name="android:textSize">10sp</item>
         <item name="android:textColor">@color/gold_selector</item>
-    </style></resources>
+
+    </style>
+
+    <style name="CustomNavigationRail" parent="Widget.MaterialComponents.NavigationRailView">
+        <item name="android:itemBackground">@android:color/transparent</item>
+        <item name="rippleColor">@android:color/transparent</item>
+    </style>
+</resources>

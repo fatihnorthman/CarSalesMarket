@@ -1,4 +1,4 @@
-package com.ncorp.carsalesmarket
+package com.ncorp.carsalesmarket.view
 
 import android.os.Bundle
 import android.view.LayoutInflater

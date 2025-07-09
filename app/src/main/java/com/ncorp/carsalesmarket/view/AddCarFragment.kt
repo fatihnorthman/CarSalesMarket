@@ -1,16 +1,14 @@
-package com.ncorp.carsalesmarket
+package com.ncorp.carsalesmarket.view
 
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
-import com.ncorp.carsalesmarket.databinding.FragmentLoginBinding
+import com.ncorp.carsalesmarket.databinding.FragmentAddCarBinding
 
-
-class LoginFragment : Fragment() {
-	private var _binding: FragmentLoginBinding? = null
+class AddCarFragment : Fragment() {
+	private var _binding: FragmentAddCarBinding? = null
 	private val binding get() = _binding!!
 
 
@@ -24,22 +22,19 @@ class LoginFragment : Fragment() {
 		savedInstanceState: Bundle?
 	): View? {
 		// Inflate the layout for this fragment
-		_binding = FragmentLoginBinding.inflate(inflater, container, false)
+		_binding = FragmentAddCarBinding.inflate(inflater, container, false)
 		val view = binding.root
-		return view
-	}
+		return view	}
 
 	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 		super.onViewCreated(view, savedInstanceState)
-
-		binding.loginButton.setOnClickListener {
-			val action = LoginFragmentDirections.actionLoginFragmentToCarListFragment()
-			findNavController().navigate(action)
-		}
 	}
 
-	override fun onDestroy() {
-		super.onDestroy()
+
+
+
+	override fun onDestroyView() {
+		super.onDestroyView()
 		_binding = null
 	}
 

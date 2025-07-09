@@ -5,28 +5,30 @@
     android:layout_height="match_parent"
     android:background="#121212"
     android:fitsSystemWindows="true"
-    tools:context=".CarListFragment">
+    tools:context=".view.CarListFragment">
 
     <!-- Arka plan için alt sağ köşedeki görsel -->
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="300dp"
+        android:layout_width="0dp"
         android:layout_height="100dp"
         android:importantForAccessibility="no"
         android:rotation="180"
         android:scaleType="fitXY"
         android:src="@drawable/background_login"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/recyclerCarView" />
 
-    <!-- RecyclerView, bottom navigation üstünde kalacak -->
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerCarView"
         android:layout_width="0dp"
         android:layout_height="0dp"
+
         android:clipToPadding="false"
-        android:paddingBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@id/menu"
+
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -35,15 +37,6 @@
     <!-- Alt menü çubuğu -->
     <!-- Bottom Navigation Bar -->
     <!-- Sol menü (Navigation Rail) -->
-    <com.google.android.material.navigationrail.NavigationRailView
-        android:id="@+id/menu"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        app:menu="@menu/bottom_nav_menu"
-        android:background="#121212"
-        app:itemIconTint="@color/gold_selector"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

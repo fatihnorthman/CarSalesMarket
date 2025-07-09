@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#121212"
+    tools:context=".view.AddCarFragment">
+
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
     android:id="@+id/addCarLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#121212"
     android:padding="24dp"
-    tools:context=".AddCarFragment">
+    >
 
     <!-- Araç Resmi -->
     <com.google.android.material.card.MaterialCardView
@@ -51,13 +61,13 @@
 
     </com.google.android.material.card.MaterialCardView>
 
-    <!-- Model -->
+
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/modelLayout"
+        android:id="@+id/brandLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Model"
+        android:hint="Marka"
         app:boxBackgroundColor="#1E1E1E"
         app:boxStrokeColor="#FFD700"
         app:hintTextColor="#FFD700"
@@ -67,15 +77,39 @@
         android:layout_marginTop="16dp">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editBrand"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:inputType="textCapWords"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Model (Yazılı) -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/modelLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Model"
+        app:boxBackgroundColor="#1E1E1E"
+        app:boxStrokeColor="#FFD700"
+        app:hintTextColor="#FFD700"
+        app:layout_constraintTop_toBottomOf="@id/brandLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp">
+
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editModel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="#FFFFFF"
-            android:inputType="text"
+            android:inputType="textCapWords"
             android:maxLines="1" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Yıl -->
+    <!-- Yıl (Seçimli dropdown) -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/yearLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -90,8 +124,77 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="12dp">
 
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteYear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:inputType="none" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Yakıt Türü (Seçimli dropdown) -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/fuelTypeLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Yakıt Türü"
+        app:boxBackgroundColor="#1E1E1E"
+        app:boxStrokeColor="#FFD700"
+        app:hintTextColor="#FFD700"
+        app:layout_constraintTop_toBottomOf="@id/yearLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp">
+
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteFuelType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:inputType="none" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Vites Tipi (Seçimli dropdown) -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/gearboxLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Vites Tipi"
+        app:boxBackgroundColor="#1E1E1E"
+        app:boxStrokeColor="#FFD700"
+        app:hintTextColor="#FFD700"
+        app:layout_constraintTop_toBottomOf="@id/fuelTypeLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp">
+
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteGearbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:inputType="none" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Motor Hacmi (Yazılı) -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/engineCapacityLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Motor Hacmi (cc)"
+        app:boxBackgroundColor="#1E1E1E"
+        app:boxStrokeColor="#FFD700"
+        app:hintTextColor="#FFD700"
+        app:layout_constraintTop_toBottomOf="@id/gearboxLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp">
+
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editYear"
+            android:id="@+id/editEngineCapacity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="#FFFFFF"
@@ -99,7 +202,123 @@
             android:maxLines="1" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Kilometre -->
+    <!-- Motor Gücü (Yazılı) -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/enginePowerLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Motor Gücü (HP)"
+        app:boxBackgroundColor="#1E1E1E"
+        app:boxStrokeColor="#FFD700"
+        app:hintTextColor="#FFD700"
+        app:layout_constraintTop_toBottomOf="@id/engineCapacityLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editEnginePower"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:inputType="number"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Renk (Seçimli dropdown) -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/colorLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Renk"
+        app:boxBackgroundColor="#1E1E1E"
+        app:boxStrokeColor="#FFD700"
+        app:hintTextColor="#FFD700"
+        app:layout_constraintTop_toBottomOf="@id/enginePowerLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp">
+
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteColor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:inputType="none" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Kasa Tipi (Seçimli dropdown) -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/bodyTypeLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Kasa Tipi"
+        app:boxBackgroundColor="#1E1E1E"
+        app:boxStrokeColor="#FFD700"
+        app:hintTextColor="#FFD700"
+        app:layout_constraintTop_toBottomOf="@id/colorLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp">
+
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteBodyType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:inputType="none" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Araç Durumu (Seçimli dropdown) -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/conditionLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Araç Durumu"
+        app:boxBackgroundColor="#1E1E1E"
+        app:boxStrokeColor="#FFD700"
+        app:hintTextColor="#FFD700"
+        app:layout_constraintTop_toBottomOf="@id/bodyTypeLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp">
+
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteCondition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:inputType="none" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Kaza Durumu (Seçimli dropdown) -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/accidentLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Kaza Durumu"
+        app:boxBackgroundColor="#1E1E1E"
+        app:boxStrokeColor="#FFD700"
+        app:hintTextColor="#FFD700"
+        app:layout_constraintTop_toBottomOf="@id/conditionLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp">
+
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteAccident"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:inputType="none" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Kilometre (Yazılı) -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/kmLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -109,7 +328,7 @@
         app:boxBackgroundColor="#1E1E1E"
         app:boxStrokeColor="#FFD700"
         app:hintTextColor="#FFD700"
-        app:layout_constraintTop_toBottomOf="@id/yearLayout"
+        app:layout_constraintTop_toBottomOf="@id/accidentLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="12dp">
@@ -123,7 +342,7 @@
             android:maxLines="1" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Fiyat -->
+    <!-- Fiyat (Yazılı) -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/priceLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -147,7 +366,7 @@
             android:maxLines="1" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Satılan Şehir -->
+    <!-- Satılan Şehir (Yazılı) -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/cityLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -171,7 +390,7 @@
             android:maxLines="1" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Telefon Numarası -->
+    <!-- Telefon Numarası (Yazılı) -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/phoneLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -184,7 +403,8 @@
         app:layout_constraintTop_toBottomOf="@id/cityLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="12dp">
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="24dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editPhone"
@@ -195,45 +415,7 @@
             android:maxLines="1" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Ek Açıklama -->
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/extraLayout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:hint="Ek Açıklama"
-        app:boxBackgroundColor="#1E1E1E"
-        app:boxStrokeColor="#FFD700"
-        app:hintTextColor="#FFD700"
-        app:layout_constraintTop_toBottomOf="@id/phoneLayout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/buttonAddCar"
-        android:layout_marginTop="12dp"
-        android:layout_marginBottom="16dp">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editExtra"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textColor="#FFFFFF"
-            android:gravity="top"
-            android:inputType="textMultiLine"
-            android:maxLines="6" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <!-- Ekle Butonu -->
-    <Button
-        android:id="@+id/buttonAddCar"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:text="Aracı Ekle"
-        android:textColor="#121212"
-        android:backgroundTint="#FFD700"
-        android:textAllCaps="false"
-        android:fontFamily="sans-serif-medium"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>
